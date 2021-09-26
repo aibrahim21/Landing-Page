@@ -54,7 +54,7 @@ ul.nav {
 
 p {
   text-align: center;
-  font-size: 15px;
+  font-size: 30px;
   padding: 1em;
   color: #ECF0F1;
   min-height: 500px;
@@ -89,10 +89,6 @@ html {
 
 .active {
   background-color: #F4D03F;
-}
-
-p {
-  font-size: 30px;
 }
 
 .section1 {}
