@@ -1,112 +1,104 @@
-.container{
-
+.container {
   display: grid;
-  grid-template-rows:(25px,auto);
-  grid-template-columns: (1 fr,auto);
+  grid-template-rows: (25px, auto);
+  grid-template-columns: (1 fr, auto);
   grid-template-areas:
-  "nav nav nav nav nav"
-  "cont cont cont cont cont"
-  "cont cont cont cont cont"
-  "cont cont cont cont cont"
-  "cont cont cont cont cont"
+    "nav nav nav nav nav"
+    "cont cont cont cont cont"
+    "cont cont cont cont cont"
+    "cont cont cont cont cont"
+    "cont cont cont cont cont"
   ;
-grid-gap: 25px;}
-
-
-
-
-.sectionAndCont{
-  min-height:900px;}
-
-
-
-
-
-.section{
-  display: flex;
-border: 1px solid #F4D03F;}
-
-
-.content{
-
-  display: flex;
-  flex-direction:column;
-  grid-area:cont;}
-
-
-
-.navBox
-{
-  display: flex;
-  flex-direction: row;}
-
-.nav{
-  background-color:#17202A ;
-  grid-area:nav;
-  display: flex;
+  grid-gap: 25px;
 }
 
+.sectionAndCont {
+  min-height: 900px;
+}
 
+.section {
+  display: flex;
+  border: 1px solid #F4D03F;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  grid-area: cont;
+}
+
+.navBox {
+  display: flex;
+  flex-direction: row;
+}
+
+.nav {
+  background-color: #17202A;
+  grid-area: nav;
+  display: flex;
+}
 
 li a {
   text-align: center;
   padding: 20px 20px;
-  color: #ECF0F1 ;
+  color: #ECF0F1;
   text-decoration: none;
 }
 
+ul.nav {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  font-weight: bold;
+}
 
-
-
-
-ul.nav{
-    width: 100%;
-    position: sticky;
-    top: 0;
-    font-weight: bold;}
-
-
-p{
+p {
   text-align: center;
-  font-size:15px;
+  font-size: 15px;
   padding: 1em;
-  color:#ECF0F1 ;
-  min-height:500px;}
+  color: #ECF0F1;
+  min-height: 500px;
+}
 
-
-h3{
-padding-top: 3em;
-text-align:center;
-color: #F4D03F;
-font-size: 20px;}
-
-
-
-h1.content{
-  min-height:500px;
+h3 {
+  padding-top: 3em;
   text-align: center;
-  margin-top:4em;
-  color: #F4D03F;}
+  color: #F4D03F;
+  font-size: 20px;
+}
 
+h1.content {
+  min-height: 500px;
+  text-align: center;
+  margin-top: 4em;
+  color: #F4D03F;
+}
 
 html {
-    scroll-behavior:smooth;}
+  scroll-behavior: smooth;
+}
 
+.buttonStyle {
+  cursor: pointer;
+  border: 1px solid #F4D03F;
+}
 
- .buttonStyle{
-   cursor: pointer;
-   border: 1px solid #F4D03F;}
+.buttonStyle :hover {
+  text-decoration: underline;
+}
 
+.active {
+  background-color: #F4D03F;
+}
 
-   .buttonStyle  :hover {
+p {
+  font-size: 30px;
+}
 
-  text-decoration: underline;}
-  .active {
-      background-color:#F4D03F;
-  }
+.section1 {}
 
+.section2 {}
 
-.section1{}
-.section2{}
-.section3{}
-.section4{}
+.section3 {}
+
+.section4 {}
