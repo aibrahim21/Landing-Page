@@ -9,16 +9,16 @@ for (section of allSections) // going through every section inside the Node arra
 
 
   //creating <li> tags and setting content to each one.
-  var navItem = document.createElement('li'); // creating a list element as a nav element
+  let navItem = document.createElement('li'); // creating a list element as a nav element
   navItem.className = " nav buttonStyle " + section.querySelector('h3').innerText; // <li> item setting class Nav
 
 
 
   //creating <a> tag
-  var linkNav = document.createElement('a'); //creating <a> element
+  let linkNav = document.createElement('a'); //creating <a> element
   linkNav.innerHTML = section.querySelector('h3').innerText; // making the content of the <a> tag equal to the title of each section
-  var hrefVar = "#" + linkNav.innerHTML; //combining the # with sectiontitle to create the href content
-  linkNav.setAttribute("href", hrefVar);
+  let hrefVar = "#" + linkNav.innerHTML; //combining the # with sectiontitle to create the href content
+  //linkNav.setAttribute("href", hrefVar);   // I removed the href
   section.setAttribute("id", hrefVar.substring(1)); //setting an Id to the existing <li> inside the sections
 
 
@@ -28,27 +28,27 @@ for (section of allSections) // going through every section inside the Node arra
   document.body.appendChild(unordList); //adding<ul>tag to the body.
 
 }
-var allNavs = document.querySelectorAll('.buttonStyle'); //all nav Items
+let allNavs = document.querySelectorAll('.buttonStyle'); //all nav Items
 
 
 
 const observerOptions = {
   root: null,
   rootMargin: '0px',
-  threshold: 0.6,
+  threshold: 0.8,
 
 
 };
 // IntersectionObserver function
-var count = 0;
+let count = 0;
 
 function observercallback(entries, observer) {
   for (entry of entries) {
 
-    var targetClick = entry.target.id;
+    let targetClick = entry.target.id;
     ///console.log(document.querySelector("."+targetClick));
     ///document.querySelector("."+targetClick).classList(".active");
-    var elemN = document.querySelector("." + targetClick);
+    let elemN = document.querySelector("." + targetClick);
     if (entry.isIntersecting) {
       elemN.classList.add("active");
       count++;
@@ -66,3 +66,25 @@ function observercallback(entries, observer) {
 const observer = new IntersectionObserver(observercallback, observerOptions);
 
 allSections.forEach((sec) => observer.observe(sec));
+
+
+
+
+
+/////////////////////////////////////Scroll Behaviour smooth to sections inside the page////////////////////////////////////////////////////////////////////////////////////////////////
+let allButtons = document.getElementsByClassName("buttonStyle"); //selecting all items inside the navBar using buttonStyle class
+let counting = 1; // counter for changing the Id of each Section
+for (button of allButtons) { // going through every nav Item
+
+  let theClass = "#section" + counting; // creating the Id full name to get sections
+  let evSection = document.querySelector(theClass); // geting sections
+  counting++; //counting throughto the next section
+  button.addEventListener("click", function() // the event listener on nav bar items
+    {
+
+      evSection.scrollIntoView({
+        behavior: 'smooth'
+      }); // scrolling to each section.
+    })
+
+}
